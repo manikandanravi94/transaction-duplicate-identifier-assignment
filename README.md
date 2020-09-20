@@ -12,7 +12,9 @@ spring-boot
 ![csvDependency](./images/csv.PNG)
 
 * To read a xml file
+
 ![xmlDependency](./images/xml.PNG)
+
 #### Java version used for development
 1.8
 
@@ -20,7 +22,7 @@ spring-boot
 
 written validations of a transaction in a predicate. If any new validation need to be added can be added since it is easily configurable.
 
-![xmlDependency](./images/validator.PNG)
+![validation](./images/validator.PNG)
 
 Limitaions
 > path for log4j is mentioned in c: drive
