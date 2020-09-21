@@ -17,8 +17,6 @@ import java.util.List;
 @Slf4j
 public class CSVDataLoaderService extends DataLoaderService {
 
-    private static final String FILE_NAME = "records.csv";
-
     /**
      * This method fetches data from csv file and returns a validated transaction list
      *

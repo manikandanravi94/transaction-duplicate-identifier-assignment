@@ -1,6 +1,7 @@
 package com.mani.core;
 
 import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.mani.exception.TransactionDuplicateAppException;
 import com.mani.model.Records;
@@ -25,6 +26,7 @@ public class XMLDataLoaderService extends DataLoaderService {
     public List<Transaction> loadDataFromFile(File file) throws TransactionDuplicateAppException {
         try {
             XmlMapper xmlMapper = new XmlMapper();
+            xmlMapper.enable(DeserializationFeature.FAIL_ON_IGNORED_PROPERTIES);
             Records iterator = xmlMapper.readValue(file, Records.class);
             return validatedTransactions(iterator.getRecord());
         } catch (JsonParseException e) {
