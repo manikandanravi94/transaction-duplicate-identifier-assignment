@@ -31,7 +31,10 @@ public class DuplicateFinderProcessor {
         log.debug("Entered find Duplicate method");
         File folder = new File(filePath);
         File[] files = folder.listFiles();
-        if (files == null && files.length > 1) {
+        if (files == null) {
+            throw new TransactionDuplicateAppException("Specified folder doesnot contain any file");
+        }
+        if(files.length > 1){
             throw new TransactionDuplicateAppException("Specified folder contains more files than the specified count " + files.length);
         }
         String fileName = files[0].getName();
